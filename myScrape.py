@@ -4,16 +4,8 @@ import meetup.api
 import pandas as pd
 import numpy as np
 
-'''
-to do list:
-1. (DONE) add two missing cities in BOSTON_CSA_TOP20
-2. (DONE) test the 'fetch data' function for groups and events
-3. combine fetched files
-    3.1 (DONE) make a combined json file
-    3.2 (DONE) remove duplicates while combining json files?
-4. (DONE) some event queries have venue information, but others do not. what are the connetections between venue queries and venue information in event queries or rsvp queries?
-5. add identifiable IDs to member and venue fetch processing
-'''
+# Fetching Data from meet up APIs
+# @ Ruosi Wang Jun 26th, 2018
 
 '''
 ---------------
@@ -21,7 +13,7 @@ to do list:
 ---------------
 '''
 
-API_KEY = '765a40556768637e276a192e6e573d4a'
+API_KEY = 'XXXXXXXXXXXXXXXXXXXXXXXXXXX'
 URL_STRING = "http://api.meetup.com//"
 MIN_MEMBER_NUM = 50
 MIN_RSVP_NUM = 10
@@ -263,7 +255,7 @@ def create_df_from_parsed_json(fetch_target):
     df = df.rename(columns=columns_mapper)
     return df
 
-
+# for json files that are too big to read
 def create_mapping_df_from_parsed_json(fetch_target, primary_key, foreign_key):
     # mapping between two identifications
     filter_dict = FETCH_PARS[fetch_target]['filter_dict']
