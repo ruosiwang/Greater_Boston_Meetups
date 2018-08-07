@@ -4,7 +4,7 @@ import meetup.api
 import pandas as pd
 import numpy as np
 
-# Fetching Data from meet up APIs
+# Fetching Data from meetup APIs
 # @ Ruosi Wang Jun 26th, 2018
 
 '''
@@ -194,7 +194,6 @@ def create_df_from_json(fetch_target):
                 else:
                     dicts[rsp].append(None)
             print(f'finished {c} out of {len(items)}')
-
     # create dataframe from dict object
     df = pd.DataFrame.from_dict(dicts, orient='columns')
     if len(filter_dict):
@@ -241,11 +240,6 @@ def create_df_from_parsed_json(fetch_target):
                         dicts[rsp].append(None)
                 else:
                     dicts[rsp].append(None)
-            # for key, value in response_dict.items():
-            #     if value in item.keys():
-            #         dicts[f'{value}_{key}'].append(item[value][key])
-            #     else:
-            #         dicts[f'{value}_{key}'].append('nan')
     # create dataframe from dict object
     df = pd.DataFrame.from_dict(dicts, orient='columns')
     if len(filter_dict):
